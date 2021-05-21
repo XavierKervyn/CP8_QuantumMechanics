@@ -304,7 +304,7 @@ ViewFormat;
 figure('Name','Heisenberg')
     plot(t,DeltaxDeltap,'linewidth',lw)
     set(gca,'fontsize',fs); grid on;
-    xlabel('$t$'); ylabel('$\Delta x \Delta p$');
+    xlabel('$t$'); ylabel('$\sigma_x \sigma_p$');
     hold on
     yline(0.5,'r--',{'$\hbar / 2$'},'Interpreter','Latex','LabelOrientation','horizontal','Fontsize',fs,'LineWidth',lw,'LabelVerticalAlignment','bottom');
     ylim([0.4,max(DeltaxDeltap)+0.1]);
@@ -317,12 +317,15 @@ Energie = hbar^2*k0^2/(2*mass);
 classiX = 1/omega * sqrt(2*Energie/mass) * sin(omega*t);
 classiP = sqrt(2*Energie*mass)*cos(omega*t);
 
+legendStrings = ["analytic","numerical"];
+
 h1 = figure('Name','cas classique X');
     plot(t,classiX,'--','Linewidth',lw);
     hold on
     plot(t,xmoy,'-','Linewidth',lw);
     set(gca,'fontsize',fs); grid on;
     xlabel('$t$'); ylabel('$\langle x \rangle$');
+    legend(legendStrings,'Location','best');
     xlim([t(1) t(end)]);
     ylim([min(classiX) max(classiX)]);
     MagInset(h1, -1, [1030 1350 min(classiX) -50], [850 1550 14 50], {'NW','SW';'NE','SE'});
@@ -341,6 +344,7 @@ h1 = figure('Name','cas classique P');
     plot(t,pmoy,'-','Linewidth',lw);
     set(gca,'fontsize',fs); grid on;
     xlabel('$t$'); ylabel('$\langle p \rangle$');
+    legend(legendStrings,'Location','best');
     xlim([t(1) t(end)]);
     ylim([min(classiP) max(classiP)]);
     MagInset(h1, -1, [630 955 min(classiP) -0.2], [450 1170 0.05 0.2], {'NW','SW';'NE','SE'});
