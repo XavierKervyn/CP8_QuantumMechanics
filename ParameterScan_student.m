@@ -10,9 +10,9 @@
 %% Parametres %%
 %%%%%%%%%%%%%%%%
 
-repertoire = './'; % Chemin d'acces a l'executable Sur Linux ou MacOSX
-% repertoire = ''; % Pour Windows
-executable = 'Ex8student.exe'; % Nom de l'executable
+% repertoire = './'; % Chemin d'acces a l'executable Sur Linux ou MacOSX
+repertoire = ''; % Pour Windows
+executable = 'Exercice8_Kervyn_LeMeur.exe'; % Nom de l'executable
 input = 'configuration.in.example'; % Nom du fichier d'entree
 
 tfin = 30; % Doit etre le meme que dans le fichier d'entree
